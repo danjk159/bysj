@@ -1,0 +1,76 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+
+body
+{
+    width:765px;
+}
+.h2h2{font-size:12px; font-family: "微软雅黑";color: #323232;padding: 10px 15px;border-bottom: 1px solid #323232;}
+
+input,img
+{
+    vertical-align:middle;
+}
+
+#siteMain{ width:730px; _width:790px; height:500px; margin-left:50px; }
+#siteMain ul{width:730px; _width:790px;list-style:none;margin-left:0px; position:relative;left:0px; top:10px;}
+#siteMain ul li{ width:132px; float:left; margin-right:50px;_margin-right:15px; margin-bottom:80px; position:relative; }
+#siteMain ul li img{ display:block; border:1px solid #D0D9E2;  width:130px; height:85px;}
+
+.btn
+{  
+    width:132px; height:20px;  position:absolute; bottom:-41px; *bottom:-38px; left:0px;
+    border:none;cursor: pointer; 
+    color:#000000;
+    line-height:20px;
+    *padding-top:2px;
+}
+.btnAdd
+{  
+    width:75px; height:20px;  position:absolute; bottom:-68px;*bottom:-65px; left:35px;
+    border:none;cursor: pointer; 
+    color:#000000;background:url(../images/addpic.png) no-repeat;
+    line-height:20px;
+    *padding-top:2px;
+}
+
+.Title
+{
+    overflow:hidden;
+    font-size:12px; text-align:center; vertical-align:middle; line-height:20px;
+    width:132px;height:auto;  position:absolute; left:0px;
+    border:none;
+    color:#000000;
+}
+.btnE
+{
+    width:60px; height:20px;  position:absolute; bottom:-80px; *bottom:-45px; left:0px;
+    border:none;
+    cursor: pointer; 
+    background:url(../images/addpic.png) no-repeat;
+    color:#000000;
+    line-height:20px;
+    *padding-top:2px;
+}
+
+.btnD
+{
+    width:60px; height:20px;  position:absolute; bottom:-80px;*bottom:-45px;  left:72px;
+    border:none;cursor: pointer; 
+    background:url(../images/addpic.png) no-repeat;
+    color:#000000;
+    line-height:20px;
+    *padding-top:2px;
+}
+#pager
+{
+    font-size:14px;
+    text-align:center;
+    width:710px;
+    padding:10px;   
+}
+
+#Search{ padding-left:50px; padding-top:10px;font-weight:bold; font-size:12px; width:682px;color:#4D5971; }
+#Search input{margin:0 5px;}

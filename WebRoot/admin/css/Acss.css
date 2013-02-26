@@ -1,0 +1,41 @@
+*{ font-family:"微软雅黑"; font-size:12px; margin:0; padding:0;}
+a{ text-decoration:none;}
+ul,ol{ list-style:none;}
+img{ border:0;}
+
+input,img,select{ vertical-align:middle;
+}
+
+#StudentList h2{ color:#323232; padding:10px 15px; border-bottom:1px solid #323232;}
+#Search{padding:10px 0 0 0;width:720px; height:23px; margin:0 auto; color:#4D5971; font-weight:bold; line-height:21px; position:relative;}
+#Search input,select{margin:0 0 0 5px;}
+#Del{width:720px; height:23px; margin:0 auto; margin-top:10px;   color:#4D5971; font-weight:bold;}
+#Del input,select{margin:0 0 0 5px;}
+#Student{ margin:0 auto; margin-top:10px; border:1px solid #BECDD8; border-collapse:collapse; text-align:center; }
+#Student td{border:1px solid #BECDD8; padding:0 15px;}
+#Student td span{color:#FF0000;}
+#Student a{color:#5F686F;}
+.Stu td{color:#0A1A3E; font-weight:bold; background-color:#EEF5FA;height:35px;}
+.tr1 td{ background-color:#EEF5FA; height:35px; color:#5F686F;}
+.tr0 td{ height:35px; color:#5F686F;}
+.NewsPage{line-height:30px; padding:10px 100px;color: #333333; text-align:left;}
+.NewsPage a,.NewsPage span{color: #333333; padding:0 5px; float:left; display:block;}
+.NewsPage a:hover{color: #4B824D;}
+#Revise{table-layout:fixed; margin:0 auto;  margin-top:10px; border:1px solid #BECDD8; border-collapse:collapse; text-align:left;}
+#Revise td{border:1px solid #BECDD8; padding:0 15px;}
+#Revise td span{color:#ff0000;}
+.red{color:#FF0000!important;}
+.gray{color:#83849D!important;}
+.textarea{width:585px; height:280px;}
+.revisebtn{ padding:5px 20px; padding:5px 10px; _padding:2px 10px;  margin:10px 0px; margin-left:50px; color:#53617E;}
+.MessageCon{width:435px; height:40px;color:#83849D}
+
+#Maintain{table-layout:fixed;border:1px solid #75A3C5; border-collapse:collapse; margin:15px 0 0 15px;}
+#Maintain td{table-layout:fixed;border:1px solid #75A3C5; text-indent:8px;}
+#Maintain td p{text-align:center;}
+#Maintain input,.TextArea{ background:url(../images/LoginBtnBg.png) repeat-x; border:1px solid #DCDCDC;}
+.TextArea{ width:600px; height:40px;}
+.tdbg{background-color:#EDEDED; text-align:right; color:#575757; font-weight:bold;}
+.TdCenter{background-color:#EDEDED; text-align:center; color:#575757; font-weight:bold;}
+
+.example{color:#343131; line-height:25px; padding-left:50px;}

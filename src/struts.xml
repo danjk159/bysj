@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+<constant name= "struts.multipart.maxSize" value="10000000" />
+	<package name="Check" extends="struts-default">
+ 		<action name="LoginCheck" class="check.Login">  
+            <result name="Scuess">/admin/default.jsp</result>  
+            <result name="Error">/admin/Login.jsp</result>  
+            <result name="AddUser">/admin/UserInfo.jsp</result>
+        </action>  
+    	<action name="ChangePassword" class="check.Pass">  
+            <result name="Scuess">/admin/Pass.jsp</result>  
+            <result name="Error">/admin/Pass.jsp</result>  
+        </action>  
+	</package>
+	
+	<package name="Admin" extends="struts-default">
+		<action name="UserInfo" class="admin.UserInfo">  
+			 <result name="Scuess">/admin/UserManage.jsp</result>
+			 <result name="Modify">/admin/UserInfo.jsp</result>
+			 <result name="Add">/admin/UserInfo.jsp</result>
+			 <result name="Error">/admin/UserInfo.jsp</result>
+			 <result name="Login">/admin/Login.jsp</result> 
+			 <result name="input">/MyJsp.jsp</result> 
+		</action>
+		<action name="DocumentManage" class="admin.DocumentManage">  
+			<result name="DocumentManage">/admin/DocumentManage.jsp</result>
+			<result name="DocumentInfo">/admin/DocumentInfo.jsp</result>
+			<result name="Login">/admin/Login.jsp</result>
+			<result name="Download" type="stream">
+				<param name="inputName">download</param>
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">filename="${fileFileName}"</param>
+			</result>
+			<result name="input">/admin/DocumentInfo.jsp</result> 
+		</action>
+		
+		<action name="CommentaryManage" class="admin.CommentaryManage">
+		<interceptor-ref name="completeStack" />
+			<result name="CommentaryManage">/admin/CommentaryManage.jsp</result>
+			<result name="CommentaryInfo">/admin/CommentaryInfo.jsp</result>
+			<result name="input">/admin/CommentaryManage.jsp</result>
+		</action>
+		
+		<action name="CommentaryInfo" class="admin.CommentaryInfo">
+			<result name="CommentaryManage">/admin/CommentaryManage.jsp</result>
+			<result name="CommentaryInfo">/admin/CommentaryInfo.jsp</result>
+			<result name="input">/admin/CommentaryInfo.jsp</result>
+		</action>
+		
+		<action name="UserLogManage" class="admin.UserLogManage">
+			<result name="UserLogManage">/admin/UserLogManage.jsp</result>
+		</action>
+		
+		<action name="Procedure" class="admin.Procedure">
+			<result name="input">/admin/UserManage.jsp</result>
+		</action>
+	</package>
+	<package name="Viewer" extends="struts-default">
+		<action name="Index" class="Index">
+		<result name="Scuess">/Index.jsp</result>
+		<result name="Error">/Index.jsp</result>
+		<result name="input">/Index.jsp</result>
+		<result name="DocumentManage">/admin/DocumentManage.jsp</result>
+		
+		</action>
+	</package>
+	<package name="myPackage" extends="struts-default">
+ 		<action name="test" class="UnitTest.testSpring">  
+            <result>/MyJsp.jsp</result>  
+        </action>  
+	</package>
+	
+</struts>

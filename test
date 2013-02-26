@@ -1,0 +1,36 @@
+use ShareDocuments;
+delimiter $$
+drop PROCEDURE if exists f6$$
+
+create PROCEDURE f6()
+begin
+DECLARE done INT DEFAULT 0;
+declare Name1 varchar(32);
+declare DocumentsId1 INT;
+DECLARE cur CURSOR FOR (select distinct Name,DocumentsId from UserLog where DocumentsId is not null order by Name,DocumentsId);
+DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done = 1;
+
+OPEN cur;
+repeat
+    FETCH cur into Name1,DocumentsId1;
+
+    if not done then
+ 
+        if not exists(select * from test where name=Name1) then
+           insert into test(name) values(Name1);
+        end if;
+        if not exists(select * from information_schema.columns where table_name = 'test' and column_name=concat('Id_',DocumentsId1)) then 
+            set @stmt=concat(' alter table test add column Id_',DocumentsId1,' INT NULL DEFAULT 0;');
+            prepare s from @stmt;
+            execute s;     
+        end if;
+        set @stmt=concat(' update test set Id_',DocumentsId1,'=1 where name=''',Name1,''';');
+        prepare s from @stmt;
+        execute s;
+    end if;
+    UNTIL done END REPEAT;
+CLOSE cur;
+
+end$$
+call f6()$$
+select * from test

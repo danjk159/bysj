@@ -1,0 +1,19 @@
+*
+{
+    margin:0px;
+    padding:0px;
+}
+
+#siteMain{ font-size:12px; width:680px; margin:0 auto; position:relative;}
+#siteMain ul{width:680px; list-style:none; position:relative; top:20px; left:-10px;}
+#siteMain ul li{ float:left; margin-left:40px;position:relative;}
+#siteMain ul li img{  width:180px; height:130px;}
+#siteMain ul li .infor { margin-bottom:25px;}
+#siteMain ul li .infor span{ display:block; text-align:center; padding-top:10px;
+                              padding-bottom:10px; }
+
+#siteMain ul li .infor input{ width:50px; height:20px; margin-left:26px;}
+#Search{ font-size:12px; width:620px; margin-left:30px; padding-top:20px; color:#4D5971; font-weight:bold;}
+#Search input{margin:0 5px;}
+#Del{padding:10px 15px 0 15px; color:#4D5971; font-weight:bold;}
+#Del input{margin:0 5px;}
