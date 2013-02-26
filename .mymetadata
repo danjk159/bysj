@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="DocumentsShare"
+  id="myeclipse.1355205504393"
+  context-root="/DocumentsShare"
+  j2ee-spec="6.0"
+  archive="DocumentsShare.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
