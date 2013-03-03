@@ -32,6 +32,7 @@ public class Index extends ActionSupport {
 	public String execute(){
 		return "input";
 	}
+	String option;
 	public String Login(){
 		if (!user.getPassword().equals("") && !user.getName().equals("")) {
 			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -60,10 +61,6 @@ public class Index extends ActionSupport {
 	}
 	public String Search(){
 		Users user=(Users)ActionContext.getContext().getSession().get("user");
-		if(user==null){
-			prompt.Alert("请重新登陆,再使用搜索功能");
-			return "input";
-		}
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
 		documentsDAO = (DocumentsDAO) context.getBean("documentsDAO");
@@ -72,7 +69,8 @@ public class Index extends ActionSupport {
 		return "DocumentManage";
 	}
 	public String AddUser(){
-		return "addUser";
+		option="add";
+		return "AddUser";
 	}
 	private void Refresh() {
 		// TODO Auto-generated method stub
@@ -123,6 +121,14 @@ public class Index extends ActionSupport {
 	}
 	public String getDescriptionsip() {
 		return descriptionsip;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
 	}
 
 }

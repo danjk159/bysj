@@ -25,28 +25,30 @@
 <body>
     <s:form name="ctl01" theme="simple" method="post" action="Index" id="ctl01">
  	<div id="Wrap">
-        <div id="Header">
-            <ul>
-            	<s:if test="user==null">
-                <li>用户名:</li>
-                <li><s:textfield name="user.name"  size="6"  MaxLength="20"></s:textfield></li>
-                <li>密码:</li>
-                <li><s:password name="user.password" size="6"  MaxLength="16"></s:password></li>
-                <li><s:submit method="Login" value="登陆" /></li>
-                <li><s:submit method="AddUser" value="注册" /></li>
-                </s:if><s:else>
-                <li>您好，<s:property value="user.name"></s:property></li>
-                <li><s:submit method="Logout" value="注销" /></li>
-                </s:else>
-            </ul>
-        </div>
-        <div id="Header">
+			<div id="Header" style="background-color: #2D2D2D;height:30px" >
+				<s:if test="user==null">
+					<font color="#FFFFFF">用户名: </font><input type="text" maxlength="20" id="ctl01_user_name"
+						value="" size="6" name="user.name" />
+    				<font color="#FFFFFF">密码:</font> <input type="password" maxlength="16"
+						id="ctl01_user_password" size="6" name="user.password" />
+					<input type="submit" value="登陆" name="method:Login"
+						id="ctl01__Login" />
+					<input type="submit" value="注册" name="method:AddUser"
+						id="ctl01__AddUser" />
+				</s:if>
+				<s:else>
+                	<font color="#FFFFFF">您好，<s:property value="user.name"></s:property></font>
+					<s:submit method="Setting" value="设置" />
+					<s:submit method="Logout" value="注销" />
+				</s:else>
+			</div>
+			<div id="Header">
             <s:fielderror  cssStyle="color:red;text-align:center;margin-top:-50px;">  
                  <s:param>Error</s:param>   
             </s:fielderror>
         </div>  
         <div style="text-align:center;padding:50px;">
-         <span  style="font-size:40px">文档共享网</span><br/>
+         <img src="images/logo.jpg" alt="logo"/><br/>
          <br/>
          <br/>
          <span  style="font-size:30px">文件名：<s:textfield name="Id"  size="30"  cssStyle="font-size:30px;height:30px" MaxLength="20"/>

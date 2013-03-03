@@ -102,7 +102,7 @@
                         </li>
                         <li><a class="heading collapsed">生成个性化推荐</a>
                             <ul class="navigation">
-                                <li><a href="Procedure?method=apriori" target="main">关联规则生成</a></li>
+                                <li><a href="Procedure.jsp" target="main">关联规则生成</a></li>
                             </ul>
                         </li>
                         </s:if>

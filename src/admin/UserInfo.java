@@ -1,5 +1,7 @@
 package admin;
 
+import java.io.File;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import check.Prompt;
@@ -54,12 +56,12 @@ public class UserInfo extends ActionSupport {
 	}
 	
 	public  String execute() throws Exception {
-		if(ActionContext.getContext().getSession().get("user")==null){
-			prompt=new Prompt();
-			prompt.JS("alert('超时，请重新登陆');" +
-					"top.location='Login.jsp';");
-			return "Login";
-		}
+//		if(ActionContext.getContext().getSession().get("user")==null){
+//			prompt=new Prompt();
+//			prompt.JS("alert('超时，请重新登陆');" +
+//					"top.location='Login.jsp';");
+//			return "Login";
+//		}
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml"); 
 		usersDAO = (UsersDAO) context.getBean("userDao");
@@ -73,10 +75,6 @@ public class UserInfo extends ActionSupport {
 					return "Error";
 			}else if (option.equals("add")&&newUser.getEmail().equals("")) {
 				this.addFieldError("EmailError", "邮箱不能为空！");
-				return "Error";
-			}else if (option.equals("add")&& 
-					usersDAO.findByEmail(newUser.getEmail()).size()!=0) {	
-				this.addFieldError("EmailError", "该邮箱已被注册！");
 				return "Error";
 			}else if (newUser.getRealName().equals("")) {
 				this.addFieldError("RealNameError", "姓名不能为空！");
@@ -116,17 +114,24 @@ public class UserInfo extends ActionSupport {
 							"top.location='Login.jsp';");
 					return "Login";
 				}
-			}else if (option.equals("add")) {
+			}else if (option.equals("add")) {//在后台登陆界面进行注册
 				this.user=newUser;
 				usersDAO.save(this.user);
-				if(((Users)ActionContext.getContext().getSession().get("user")).getName().equals("AddUser")){
-					prompt=new Prompt();
-					prompt.JS("alert('注册成功，转到登陆页面');" +
-							"top.location='Login.jsp';");
-					return "Login";
-				}
+				prompt=new Prompt();
+				File file = new File("/Login.jsp");
+				if(file.exists()){
+				prompt.JS("alert('注册成功，转到登陆页面');" +
+						"top.location='Login.jsp';");
+				return "Login";
+			}else if (option.equals("addView")) {//在前台进行注册成功后的跳转
+				this.user=newUser;
+				usersDAO.save(this.user);
+				prompt=new Prompt();
+				prompt.JS("alert('注册成功，转到登陆页面');" +
+						"top.location='Index.jsp';");
+				return "Login";
 			}
-			
+			}
 			return "Scuess";
 		}else{
 			if (option != null) {

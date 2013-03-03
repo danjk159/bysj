@@ -26,6 +26,9 @@ public class Procedure extends ActionSupport{
 	String method;
 	Prompt prompt;
 	TestDAO testDAO;
+	String result="";
+//	double Confidence=0.9;//默认置信度double Confidence=0.9;//默认置信度
+	int NumRules=1000;//默认规则条数
 	public  String execute() {
 		prompt = new Prompt();
 		Users user=(Users)ActionContext.getContext().getSession().get("user");
@@ -47,10 +50,17 @@ public class Procedure extends ActionSupport{
 					train.setClassIndex(train.numAttributes() - 1);
 				}
 				Apriori myap=new Apriori();
-				myap.setLowerBoundMinSupport(0.1);
-				myap.setOutputItemSets(true);
+//				myap.setUpperBoundMinSupport(Confidence);
+//				myap.setMinMetric(0.5);
+				myap.setOutputItemSets(true);//全部输出
+				myap.setCar(false);//设置全局关联规则
+				myap.setNumRules(NumRules);//设置规则条数
 				myap.buildAssociations(train);
-				testDAO.saveResult(myap.toString());
+				testDAO.saveResult(myap.toString());//数据库实际输入
+				myap.setOutputItemSets(false);
+				myap.buildAssociations(train);
+				
+				result=myap.toString().replaceAll("\n", "<br />").replaceAll("Minimum support", "最小支持度").replaceAll("Minimum metric", "最小置信度");
 //				   out.print(myap.toString().replaceAll("\n","<br>")+"<br>");
 //
 //
@@ -60,15 +70,14 @@ public class Procedure extends ActionSupport{
 //				   bcfile.write(myap.toString());
 //				   bcfile.close();
 //				   wfile.close();
+				prompt.Alert("生成成功");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				prompt.Alert("生成失败，请修改支持度重新生成");
 			}
-			 
-			prompt.Alert("生成成功");
 		}
 		return "input";
 	}
@@ -78,5 +87,25 @@ public class Procedure extends ActionSupport{
 	}
 	public void setMethod(String method) {
 		this.method = method;
+	}
+
+//	public double getConfidence() {
+//		return Confidence;
+//	}
+//
+//	public void setConfidence(double confidence) {
+//		Confidence = confidence;
+//	}
+
+	public int getNumRules() {
+		return NumRules;
+	}
+
+	public void setNumRules(int numRules) {
+		NumRules = numRules;
+	}
+
+	public String getResult() {
+		return result;
 	}
 }

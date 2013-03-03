@@ -43,7 +43,7 @@ html {
 		<s:hidden name="Commentary.documentsId" />
 		<s:hidden name="role"/>
 		<s:hidden name="viewName"/>
-		<s:if test="method!='View'">
+		<s:if test="method!='look'">
 		<div id="StudentList">
 			<h2>所在位置： 评论管理 > 评论管理</h2>
 			<table id="Revise" border="1" width="710">
@@ -53,7 +53,7 @@ html {
 						<td colspan="3" class="style2"><s:textfield
 								name="Commentary.name" disabled="true" MaxLength="20"
 								Style="vertical-align: top;"></s:textfield> <s:hidden
-								name="document.name" /></td>
+								name="documes:elsent.name" /></td>
 					</tr>
 					<td width="80" class="style1">文档Id</td>
 					<td colspan="3" class="style2"><s:textfield
