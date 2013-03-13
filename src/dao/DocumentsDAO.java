@@ -122,7 +122,12 @@ public class DocumentsDAO extends BaseHibernateDAO {
 	}
 	
 	public List findByLikeName(Object name) {
+		if(name==null){
+			name="%%";
+		}
+		else{
 		name="%"+name+"%";
+		}
 		log.debug("finding Documents instance with property: " + NAME
 				+ ", value: " + name);
 		try {

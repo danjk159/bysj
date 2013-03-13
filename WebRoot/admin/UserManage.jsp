@@ -54,7 +54,7 @@
 			var x = document.getElementById("tbSearch")
 			document.location.href = "UserManage.jsp?method=delete&delId="
 					+ DelLink.name
-			alert("UserManage.jsp?method=delete&id=" + DelLink.name);
+			//alert("UserManage.jsp?method=delete&id=" + DelLink.name);
 		}
 	}
 	//多个删除方法

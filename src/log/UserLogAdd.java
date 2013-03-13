@@ -49,7 +49,11 @@ public class UserLogAdd {
      /// <param name="Type">1为增加,2为修改,3为删除，4为下载，5为浏览</param>
 	public UserLogAdd(Documents documents, int type) {
 		Users user=(Users)ActionContext.getContext().getSession().get("user");
-		LoginUser=user.getName();
+		if(user!=null){
+			LoginUser=user.getName();
+		}else{
+			LoginUser="Unknown";
+		}
 		String operate = "";
 		if (documents != null) {
 			if (type > 0 && type <= 3) {
@@ -129,10 +133,12 @@ public class UserLogAdd {
 			OperAdd(OperType.UnKnown.value, operate, null);
 		}
 	}
-
+	
+	//调用Hibernate将数据存入数据库
      private void OperAdd(int operType, String operate,Integer documentsId)
      {
-		 ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+		 ClassPathXmlApplicationContext context = 
+				 new ClassPathXmlApplicationContext("applicationContext.xml"); 
 		 UserLogDAO userLogDAO = (UserLogDAO) context.getBean("userLogDAO");
          UserLog userLog = new UserLog();
          userLog.setName(LoginUser);

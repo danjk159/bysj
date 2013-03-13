@@ -119,7 +119,7 @@ public class DocumentManage extends ActionSupport {
 				this.setFileFileName( document.getName()+document.getUd0().substring(document.getUd0().lastIndexOf('.')));
 				this.setDownload(fileManage.DownloadFile(document.getUd0()));
 					if(getDownload()==null){
-						prompt.Alert("文件失效，请重新上传");
+						prompt.Alert("文件失效！");
 						Refresh();
 						return "DocumentManage";
 					}
@@ -134,9 +134,17 @@ public class DocumentManage extends ActionSupport {
 			if (btnSure==null) {
 			document = documentsDAO.findById(id);
 			new UserLogAdd(document, 5);
+			document.setViews(document.getViews()+1);
+			try {
+				Update();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return "DocumentInfo";
 			}
 			else {
+				Refresh();
 				return "DocumentManage";
 			}
 		}

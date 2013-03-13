@@ -24,8 +24,8 @@
 </head>
 <body>
     <s:form name="ctl01" theme="simple" method="post" action="Index" id="ctl01">
- 	<div id="Wrap">
-			<div id="Header" style="background-color: #2D2D2D;height:30px" >
+ 	<div id="">
+			<div id="" style="background-color: #2D2D2D;height:35px" >
 				<s:if test="user==null">
 					<font color="#FFFFFF">用户名: </font><input type="text" maxlength="20" id="ctl01_user_name"
 						value="" size="6" name="user.name" />
@@ -35,17 +35,16 @@
 						id="ctl01__Login" />
 					<input type="submit" value="注册" name="method:AddUser"
 						id="ctl01__AddUser" />
+					<s:fielderror  cssStyle="color:#2e10ff;text-align:left;margin-top:0px;">  
+                 		<s:param>Error</s:param>   
+            		</s:fielderror>
 				</s:if>
 				<s:else>
                 	<font color="#FFFFFF">您好，<s:property value="user.name"></s:property></font>
-					<s:submit method="Setting" value="设置" />
+					<a href="./admin/Login.jsp"> <input type="button" value="设置" /></a>
 					<s:submit method="Logout" value="注销" />
 				</s:else>
 			</div>
-			<div id="Header">
-            <s:fielderror  cssStyle="color:red;text-align:center;margin-top:-50px;">  
-                 <s:param>Error</s:param>   
-            </s:fielderror>
         </div>  
         <div style="text-align:center;padding:50px;">
          <img src="images/logo.jpg" alt="logo"/><br/>
@@ -54,9 +53,6 @@
          <span  style="font-size:30px">文件名：<s:textfield name="Id"  size="30"  cssStyle="font-size:30px;height:30px" MaxLength="20"/>
          <s:submit method="Search" value="搜索"   cssStyle="font-size:20px;height:40px"/></span>
         </div>
-        <div>
-         <iframe src="" scrolling="yes" name="main" frameborder="0" id="MainContent"></iframe>
-    	</div>
     </div>
     </s:form>
 </body>

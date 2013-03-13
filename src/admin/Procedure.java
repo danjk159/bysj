@@ -28,7 +28,7 @@ public class Procedure extends ActionSupport{
 	TestDAO testDAO;
 	String result="";
 //	double Confidence=0.9;//默认置信度double Confidence=0.9;//默认置信度
-	int NumRules=1000;//默认规则条数
+	int NumRules=10;//默认规则条数
 	public  String execute() {
 		prompt = new Prompt();
 		Users user=(Users)ActionContext.getContext().getSession().get("user");
