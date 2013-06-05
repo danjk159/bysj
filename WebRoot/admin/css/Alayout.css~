@@ -1,0 +1,51 @@
+/* CSS Document */
+*{ font-family:"微软雅黑","宋体"; font-size:16px; margin:0; padding:0;}
+a{ text-decoration:none;}
+ul,ol{ list-style:none;}
+img{ border:0;}
+
+#Wrap{ width:1024px; overflow:hidden; margin:0 auto;}
+#Header{ width:1024px; height:70px; background:url(../images/AdminHeader.jpg) no-repeat;}
+#Header ul{ width:330px; height:15px; padding:8px 0; float:right;}
+#Header ul li{ width:80px; height:15px; float:left; text-align:center;}
+#Header ul li a{color:#52607D;}
+#Header ul li a:hover{text-decoration:underline;}
+
+#Main{ width:1024px; height:600px; overflow:hidden;}
+#MainLt{width:223px; height:600px; overflow:auto; float:left; background:url(../images/AdminLeftBg.png) repeat-y;}
+#Info h2{ width:223px; height:32px; background:url(../images/AdminInfo.png) no-repeat;}
+#Info img{width:45px; height:57px; float:left; padding:15px 25px;}
+#Info p{padding:15px 0; line-height:19px; color:#3D3D3D;}
+#Menu h2{ width:223px; height:29px; background:url(../images/AdminMenu.png) no-repeat;}
+#FirstMenu{padding-left:8px;}
+#FirstMenu li{width:212px; overflow:hidden;}
+.heading{ width:190px; height:19px; padding:5px 0 5px 22px; display:block; cursor:pointer; font-weight:bold;}
+.collapsed{ background:url(../images/FirstMenu.png) repeat-x; color:#3A3F5C;}
+.expanded{background:url(../images/FirstMenuOver.png) repeat-x; color:#7C022B;}
+.navigation{display:none;}
+.navigation a{width:165px; height:19px; color:#3A3F5C; padding:5px 0 5px 47px; display:block; background:url(../images/SecondMenu.png) no-repeat;}
+#MainRt{ float:left;}
+#MainRtLeft{width:20px; height:600px; float:left;background:url(../images/AdminLeftOn.png) no-repeat;}
+#MainRtRight{width:16px; height:600px; float:left; background:url(../images/AdminRight.png) no-repeat;}
+#MainRtCon{width:765px; height:600px; float:left; overflow:hidden; padding-top:13px; background:url(../images/AdminTop.png) repeat-x;}
+#MainContent{width:765px; height:600px; overflow:auto;}
+
+#Footer{width: 1024px;height: 34px; margin:0 auto; background-color:#4E5D79;}
+
+#tainiFrame {
+    width: 0;
+    height: 0;
+    display: none;
+    overflow: hidden;
+}
+#AreaiFrame {
+    width: 415px;
+    height: 200px;
+    overflow:hidden;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    background-color:#F9F9F9;
+    border:1px solid #000000;
+    padding:10px;
+}
