@@ -41,7 +41,7 @@
 				</s:if>
 				<s:else>
                 	<font color="#FFFFFF">您好，<s:property value="user.name"></s:property></font>
-					<s:submit method="Setting" value="设置" />
+					<a href="./admin/Login.jsp"><input type="button" value="设置" /></a>
 					<s:submit method="Logout" value="注销" />
 				</s:else>
 			</div>
@@ -49,7 +49,7 @@
          
          <img src="images/logo.jpg" alt="logo" width="170px" height="50"/><br/><br/>
          
-         <span  style="font-size:20px">文件名：<s:textfield name="Id"  size="30"  MaxLength="20"/>
+         <span  style="font-size:20px">文件名：<s:textfield name="Id"  size="30"  MaxLength="20" style="font-size:16px"/>
          <s:submit method="Search" value="搜索"   /></span>
          </div>
         </div>
@@ -65,7 +65,7 @@
 	<tr>
 	<td>
 	<br/>
-	<a href="DocumentManage?method=look&id=<s:property value="id"/>"><img src=".<s:property value="image"/>" alt="图片失效" style="display:block;width:150px;height:150px;"/> <br/>
+	<a href="DocumentManage?method=look1&id=<s:property value="id"/>"><img src=".<s:property value="image"/>" alt="图片失效" style="display:block;width:150px;height:150px;"/> <br/>
 	<p style="font-size:15px;text-align:center;"><s:property value="name" /></p>
 	</td>
 	</tr>
@@ -81,7 +81,7 @@
 <table border="0px" width="700" style="padding-right:200px" >
  <s:iterator value="%{documents}">
      <s:if test="name!=null">
-		<tr><td colspan="3" style="text-align:center;"><a href="Index?method=look&did=<s:property value="id"/>"><span style="font-size:25px;"><s:property value="name"/></span></a></td></tr>
+		<tr><td colspan="3" style="text-align:center;"><a href="DocumentManage?method=look1&id=<s:property value="id"/>"><span style="font-size:25px;"><s:property value="name"/></span></a></td></tr>
 		<tr><td colspan="3"><p>&nbsp&nbsp&nbsp  <s:property value="contents"/></p></td></tr>
 		<tr>
 			<td>作者:<s:property value="author"/></td> 

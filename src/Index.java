@@ -74,14 +74,22 @@ public class Index extends ActionSupport {
 	}
 	public String Search(){
 		user=(Users)ActionContext.getContext().getSession().get("user");
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+		if(user!=null){
+			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
-		TestDAO testDAO = (TestDAO) context.getBean("testDAO");
-		DocumentsApriori=testDAO.Apriori(((Users)ActionContext.getContext().getSession().get("user")).getName());
-		documentsDAO = (DocumentsDAO) context.getBean("documentsDAO");
-		documentsDAO.findByLikeName(Id);
-		Refresh();
-		return "Show";
+			TestDAO testDAO = (TestDAO) context.getBean("testDAO");
+			DocumentsApriori=testDAO.Apriori(((Users)ActionContext.getContext().getSession().get("user")).getName());
+			documentsDAO = (DocumentsDAO) context.getBean("documentsDAO");
+			documentsDAO.findByLikeName(Id);
+			Refresh();
+			return "Show";
+		}
+		else{
+			Prompt prompt=new Prompt();
+			prompt.JS("alert('超时或为登陆，请先登陆');" +
+					"top.location='Index.jsp';");
+			return "Login";
+		}
 	}
 	public String AddUser(){
 		option="add";

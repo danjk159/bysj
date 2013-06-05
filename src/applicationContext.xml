@@ -14,7 +14,7 @@
 			value="jdbc:mysql://localhost:3306/ShareDocuments?characterEncoding=utf-8">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="danjk"></property>
+		<property name="password" value="admin123"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">

@@ -147,6 +147,40 @@ public class DocumentManage extends ActionSupport {
 				Refresh();
 				return "DocumentManage";
 			}
+		}else if(method.equals("look1")){
+			if (btnSure==null) {
+				document = documentsDAO.findById(id);
+				new UserLogAdd(document, 5);
+				document.setViews(document.getViews()+1);
+				try {
+					Update();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return "DocumentInfo";
+			}else{
+				prompt.JS("history.go(-2)");
+				return "Show";
+			}
+			
+		}else if(method.equals("look")){
+			if (btnSure==null) {
+			document = documentsDAO.findById(id);
+			new UserLogAdd(document, 5);
+			document.setViews(document.getViews()+1);
+			try {
+				Update();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "DocumentInfo";
+			}
+			else {
+				Refresh();
+				return "DocumentManage";
+			}
 		}
 		return "input";
 	}

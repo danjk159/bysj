@@ -1,12 +1,12 @@
 /* CSS Document */
-*{ font-family:"微软雅黑","宋体"; font-size:12px; margin:0; padding:0;}
+*{ font-family:"微软雅黑","宋体"; font-size:16px; margin:0; padding:0;}
 a{ text-decoration:none;}
 ul,ol{ list-style:none;}
 img{ border:0;}
 
 #Wrap{ width:1024px; overflow:hidden; margin:0 auto;}
 #Header{ width:1024px; height:70px; background:url(../images/AdminHeader.jpg) no-repeat;}
-#Header ul{ width:400px; height:15px; padding:8px 0; float:right;}
+#Header ul{ width:450px; height:15px; padding:8px 0; float:right;}
 #Header ul li{ width:80px; height:15px; float:left; text-align:center;}
 #Header ul li a{color:#52607D;}
 #Header ul li a:hover{text-decoration:underline;}

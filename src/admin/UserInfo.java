@@ -123,14 +123,14 @@ public class UserInfo extends ActionSupport {
 				prompt.JS("alert('注册成功，转到登陆页面');" +
 						"top.location='Login.jsp';");
 				return "Login";
+				}
 			}else if (option.equals("addView")) {//在前台进行注册成功后的跳转
 				this.user=newUser;
 				usersDAO.save(this.user);
 				prompt=new Prompt();
 				prompt.JS("alert('注册成功，转到登陆页面');" +
-						"top.location='Index.jsp';");
+						"top.location='../Index.jsp';");
 				return "Login";
-			}
 			}
 			return "Scuess";
 		}else{

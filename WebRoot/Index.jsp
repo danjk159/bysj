@@ -33,8 +33,7 @@
 						id="ctl01_user_password" size="6" name="user.password" />
 					<input type="submit" value="登陆" name="method:Login"
 						id="ctl01__Login" />
-					<input type="submit" value="注册" name="method:AddUser"
-						id="ctl01__AddUser" />
+					<a href="./admin/Login.jsp"><input type="button" value="注册" /></a>
 					<s:fielderror  cssStyle="color:#2e10ff;text-align:left;margin-top:0px;">  
                  		<s:param>Error</s:param>   
             		</s:fielderror>

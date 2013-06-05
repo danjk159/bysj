@@ -21,11 +21,16 @@
 后台为http://ubuntu.ubuntu-domain:8080/DocumentsShare/admin/Login.jsp
 默认管理员帐号密码为admin.
 
+GIMP不过是我编辑图片存放文件夹而已.
 
 因做这个本是毕业设计的需求，做完了我也就不维护了....
 项目地址设在https://github.com/danjk159/bysj.git，有装git的只要git clone https://github.com/danjk159/bysj.git一条命令就能下载了
 
+
+MyEclipse导入项目后Hibernate 3.* Core Libraries包中的antlr2.**jar包与Struts 2 Core Libraries的antlr2.**jar包会产生兼容问题，请删除版本号小的那个jar包
+
 Copyright:本项目是有搭载在SSH下的使用Weka作为环境分析的.基于Weka软件包是作为GPL协议发布的，所以本软件使用的也是GPL协议，详细请阅读COPYING.
 欢迎各位参考使用.
+
 
 

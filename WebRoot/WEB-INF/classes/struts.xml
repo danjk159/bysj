@@ -30,6 +30,7 @@
 			<result name="DocumentManage">/admin/DocumentManage.jsp</result>
 			<result name="DocumentInfo">/admin/DocumentInfo.jsp</result>
 			<result name="Login">/admin/Login.jsp</result>
+			<result name="Show">Show.jsp</result>
 			<result name="Download" type="stream">
 				<param name="inputName">download</param>
 				<param name="contentType">application/octet-stream</param>
@@ -66,6 +67,9 @@
 		<result name="input">/Index.jsp</result>
 		<result name="Show">/Show.jsp</result>
 		<result name="AddUser">/admin/UserInfo.jsp</result>
+		</action>
+		<action name="ShowInfo" class="ShowInfo">
+		<result name="Show">/Show.jsp</result> 
 		</action>
 	</package>
 	<package name="myPackage" extends="struts-default">

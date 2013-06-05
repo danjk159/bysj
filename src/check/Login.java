@@ -74,7 +74,7 @@ public class Login extends ActionSupport {
 	}
 	public String AddUser(){
 		this.user=new Users();
-		setOption("add");
+		setOption("addView");
 		user.setName("AddUser");
 		ActionContext.getContext().getSession().put("user", user);
 		return "AddUser";

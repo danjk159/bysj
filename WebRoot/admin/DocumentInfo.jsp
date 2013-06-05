@@ -42,7 +42,112 @@ html {
 		<s:hidden name="document.id" />
 		<s:hidden name="document.image" />
 		
-		<s:if test="method!='look'">
+		
+		<s:if test="method=='look'">
+		<div id="StudentList">
+			<h2>所在位置： 文档管理 > 文档管理</h2>
+			<table id="Revise" border="1" width="710">
+				<tbody>
+					<tr>
+					<td width="80" class="style1">文档名</td>
+					<td colspan="3" class="style2">
+								<s:textfield name="document.name" disabled="true" MaxLength="20"
+									Style="vertical-align: top;"></s:textfield>
+					</td>
+					</tr>
+					<td width="80" class="style1">作者</td>
+					<td colspan="3" class="style2"><s:textfield
+							name="document.author" disabled="true" MaxLength="20"
+							Style="vertical-align: top;" Width="200px"></s:textfield> 
+					</tr>
+					<tr>
+						<td width="80" class="style1">日期</td>
+						<td colspan="3" class="style2"><s:textfield
+								name="document.date" disabled="true"
+								Style="vertical-align: top;" onClick="WdatePicker()">
+								<s:param name="value">
+									<s:date name="%{document.date}" format="yyyy-MM-dd" />
+								</s:param>
+							</s:textfield>
+					</tr>
+					<tr>
+						<td width="80" class="style1">描述</td>
+						<td colspan="3" class="style2"><s:textarea
+								name="document.contents" disabled="true"cols="55" rows="10"></s:textarea>
+					</tr>
+					<tr>
+						<td width="80" class="style1">浏览次数</td>
+						<td colspan="3" class="style2"><s:textfield
+								name="document.views" disabled="true"
+								Style="vertical-align: top;" Width="200px"></s:textfield> </td>
+					</tr>
+					<tr>
+						<td width="80" class="style1">图片</td>
+						<td colspan="3" class="style2"> <img
+							src="..<s:property value="document.image"/>" alt="" width="150px"
+							height="150px" /> 
+					</tr>
+				</tbody>
+			</table>
+			<input id="btnSure" class="revisebtn" type="submit" value="确定"
+				name="btnSure">
+				</input>
+		</div>
+		</s:if>
+		
+		<s:elseif test="method=='look1'">
+		<div id="StudentList">
+			<h2>所在位置： 文档管理 > 文档管理</h2>
+			<table id="Revise" border="1" width="710">
+				<tbody>
+					<tr>
+					<td width="80" class="style1">文档名</td>
+					<td colspan="3" class="style2">
+								<s:textfield name="document.name" disabled="true" MaxLength="20"
+									Style="vertical-align: top;"></s:textfield>
+					</td>
+					</tr>
+					<td width="80" class="style1">作者</td>
+					<td colspan="3" class="style2"><s:textfield
+							name="document.author" disabled="true" MaxLength="20"
+							Style="vertical-align: top;" Width="200px"></s:textfield> 
+					</tr>
+					<tr>
+						<td width="80" class="style1">日期</td>
+						<td colspan="3" class="style2"><s:textfield
+								name="document.date" disabled="true"
+								Style="vertical-align: top;" onClick="WdatePicker()">
+								<s:param name="value">
+									<s:date name="%{document.date}" format="yyyy-MM-dd" />
+								</s:param>
+							</s:textfield>
+					</tr>
+					<tr>
+						<td width="80" class="style1">描述</td>
+						<td colspan="3" class="style2"><s:textarea
+								name="document.contents" disabled="true"cols="55" rows="10"></s:textarea>
+					</tr>
+					<tr>
+						<td width="80" class="style1">浏览次数</td>
+						<td colspan="3" class="style2"><s:textfield
+								name="document.views" disabled="true"
+								Style="vertical-align: top;" Width="200px"></s:textfield> </td>
+					</tr>
+					<tr>
+						<td width="80" class="style1">图片</td>
+						<td colspan="3" class="style2"> 
+						<img src="..<s:property value="document.image"/>" alt="" width="150px"
+							height="150px" /> 
+					</tr>
+				</tbody>
+			</table>
+			<input id="btnSure" class="revisebtn" type="submit" value="确定"
+				name="btnSure">
+				</input>
+		</div>
+		</s:elseif>
+		
+		<s:else>
 		<div id="StudentList">
 			<h2>所在位置： 文档管理 > 文档管理</h2>
 			<table id="Revise" border="1" width="710">
@@ -98,8 +203,7 @@ html {
 						<td width="80" class="style1">浏览次数</td>
 						<td colspan="3" class="style2"><s:textfield
 								name="document.views" required="true"
-								Style="vertical-align: top;" Width="200px"></s:textfield> <span
-							class="red"> 请输入数字</span></td>
+								Style="vertical-align: top;" Width="200px"></s:textfield></td>
 						<s:fielderror
 							cssStyle="color:red;text-align:center;margin-top:15px;">
 							<s:param>ViewsError</s:param>
@@ -121,59 +225,9 @@ html {
 				name="btnSure"> <input type="button" class="revisebtn"
 				onclick="Cancel()" id="btnCancel" value="取消" name="btnCancel">
 		</div>
-		</s:if>
-		<s:else>
-		<div id="StudentList">
-			<h2>所在位置： 文档管理 > 文档管理</h2>
-			<table id="Revise" border="1" width="710">
-				<tbody>
-					<tr>
-					<td width="80" class="style1">文档名</td>
-					<td colspan="3" class="style2">
-								<s:textfield name="document.name" disabled="true" MaxLength="20"
-									Style="vertical-align: top;"></s:textfield>
-					</td>
-					</tr>
-					<td width="80" class="style1">作者</td>
-					<td colspan="3" class="style2"><s:textfield
-							name="document.author" disabled="true" MaxLength="20"
-							Style="vertical-align: top;" Width="200px"></s:textfield> 
-					</tr>
-					<tr>
-						<td width="80" class="style1">日期</td>
-						<td colspan="3" class="style2"><s:textfield
-								name="document.date" disabled="true"
-								Style="vertical-align: top;" onClick="WdatePicker()">
-								<s:param name="value">
-									<s:date name="%{document.date}" format="yyyy-MM-dd" />
-								</s:param>
-							</s:textfield>
-					</tr>
-					<tr>
-						<td width="80" class="style1">描述</td>
-						<td colspan="3" class="style2"><s:textarea
-								name="document.contents" disabled="true"cols="55" rows="10"></s:textarea>
-					</tr>
-					<tr>
-						<td width="80" class="style1">浏览次数</td>
-						<td colspan="3" class="style2"><s:textfield
-								name="document.views" disabled="true"
-								Style="vertical-align: top;" Width="200px"></s:textfield> <span
-							class="red"> 请输入数字</span></td>
-					</tr>
-					<tr>
-						<td width="80" class="style1">图片</td>
-						<td colspan="3" class="style2"> <img
-							src="..<s:property value="document.image"/>" alt="" width="150px"
-							height="150px" /> 
-					</tr>
-				</tbody>
-			</table>
-			<input id="btnSure" class="revisebtn" type="submit" value="确定"
-				name="btnSure">
-				</input>
-		</div>
 		</s:else>
+		
+		
 	</s:form>
 </body>
 </html>
